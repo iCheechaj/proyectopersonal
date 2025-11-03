@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    >
+</head>
+<!--
+<style>
+  body {
+    background-color: #ffd400; 
+  }
+</style>
+-->
+<body>
+    <section class="section">
+        <div class="container box">
+            <h1 id="form-title" class="title is-3 has-text-centered">
+                Nuevo VideoJuego
+            </h1>
+
+            <form id="game-form">
+                <div class="field">
+                    <label class="label">
+                        Titulo
+                    </label>          
+                    <input class="input" type="text" name="titulo"
+                    required placeholder="Ej. Super Mario Bros">              
+                </div>
+                <div class="field">
+                    <label class="label">
+                        Dessarrolladora
+                    </label>          
+                    <input class="input" type="text" name="desarrolladora"
+                    required placeholder="Ej. Nintendo">              
+                </div>
+                <div class="field">
+                    <label class="label">
+                        Año de lanzamiento
+                    </label>          
+                    <input class="input" min="1900" type="number" name="anio"
+                    required placeholder="Ej. 1985">              
+                </div>
+                <div class="field">
+                    <label class="label">
+                        Genero
+                    </label>          
+                    <input class="input" type="text" name="genero"
+                    required placeholder="Ej. Plataformas">              
+                </div>
+                <div class="field">
+                    <label class="label">
+                        Rating
+                    </label>          
+                    <input class="input" type="number" name="rating"
+                    required placeholder="Ej. 95">              
+                </div>
+                <div class="field">
+                    <label class="label">Imagen (Base64)</label>          
+                    <div class="file has-name is-fullwidth">
+                            <label class="file-label">
+                                <input class="file-input" type="file" id="imagen">
+                                <span class="file-cta">
+                                    <span class="file-label">Seleccionar Archivo...</span>
+                                </span>
+                                <span class="file-name" id="file-name">Ningun Archivo Seleccionado</span>
+                            </label>
+                    </div>        
+                </div>
+                <input type="hidden" id="game-id">
+
+                <input type="hidden" name="imagen_actual" id="imagen_actual" value="">
+                <div class="field" id="preview-field" style="display: none;">
+                    <label for="label">Preview</label>
+                    <div class="control">
+                        <figure class="image is-128x128">
+                            <img src="" id="imagen-preview" class="is-rounded" alt="Preview Imagen">
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="field has-text-centered mt-5">
+                    <button type="submit" class="button is-primary is-dark is-medium">
+                        <span>Guardar</span>
+                    </button>
+                    <a class="button is-light is-medium ml-2" href="index.html">
+                        <span>Volver</span>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const fileInput = document.querySelector('#imagen');
+            const fileName = document.querySelector('#file-name');
+            fileInput.addEventListener("change", () => {
+                fileName.textContent = fileInput.files.length > 0
+                    ? fileInput.files[0].name
+                    : 'Ningun Archivo Seleccionado';
+            });
+            initform();
+        });
+    </script>
+
+</body>
+</html>

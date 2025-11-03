@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoJuegos</title>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    >
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="level mb-4">
+                <div class="level left">
+                    <h1 class="title is-3">Lista de VideoJuegos</h1>
+                </div>
+
+                <div class="level-right">
+                    <button class="button is-primary is-dark " 
+                        onclick="window.location.href='form.html'">
+                        <span>Agregar VideoJuego</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="box mb-4">
+                <div class="columns is-multiline">
+                    <div class="column is-one-quarter">
+                        <input placeholder="Rating"
+                        type="number" id="filter-rating"
+                        class="input">
+                    </div>
+                    <div class="column is-one-quarter">
+                        <input placeholder="Genero"
+                        type="text" id="filter-genero"
+                        class="input">
+                    </div>
+                    <div class="column is-one-quarter">
+                        <button id="filter-btn" class="button is-primary">
+                            <span>Filtrar</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-container box">
+                <table id="games-table"
+                    class="table is-hoverable table is-bordered table is-fullwidth">
+                    <thead>
+                        <!-- Primera fila de la tabla-->
+                        <tr class="is-dark">
+                            <th>ID</th>
+                            <th>Titulo</th>
+                            <th>Desarrolladora</th>
+                            <th>Año</th>
+                            <th>Genero</th>
+                            <th>Rating</th>
+                            <th>Imagen</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+</html>
